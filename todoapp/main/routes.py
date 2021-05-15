@@ -43,3 +43,12 @@ def delete_all():
     todo_collection = mongo.db.todos
     todo_collection.delete_many({})
     return redirect(url_for('main.index'))
+
+@main.route('/mark_all_complete')
+def mark_all_completed():
+    todo_collection = mongo.db.todos
+    todos = todo_collection.find()
+    for todo in todos:
+        todo['completed'] = True
+        todo_collection.save(todo)
+    return redirect(url_for('main.index'))
