@@ -37,6 +37,8 @@ pip install dnspython
     Clone the repo
 
     git clone https://github.com/arindam1997007/ToDo
+    
+    Change a.flaskenv to .flaskenv
 
     Install packages
 
